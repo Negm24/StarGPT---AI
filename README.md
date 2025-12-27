@@ -1,42 +1,68 @@
-# Welcome To StarLung Predictions!
+# 🫁 StarGPT AI: Lung Cancer Classification System
 
-## This project is about creating an AI model to detect a Lung Cancer and learns from its dataset in ./data/raw/ folder.
+![Project Status](https://img.shields.io/badge/Status-Completed-success)
+![Python](https://img.shields.io/badge/Python-3.9%2B-blue)
+![React](https://img.shields.io/badge/Frontend-React%20%2B%20Vite-61DAFB)
+![TensorFlow](https://img.shields.io/badge/Model-VGG16-orange)
 
-### If this project is sent to you, just do these steps:
-    
-### **Setup**:
+## Project Overview
+**OncoVision AI** is a web-based diagnostic tool designed to assist medical professionals in the early detection of lung cancer. It utilizes a **Deep Learning model (VGG16)** trained on histopathological images to classify lung tissue samples into three categories:
 
-    1. Open Terminal
-    2. Write "pip install -r libraries.txt"
-    3. DO NOT CLOSE THE TEXT EDITOR UNTIL IT FINISHES!
+1.  **Benign** (Non-cancerous - safe)
+2.  **Adenocarcinoma** (Malignant)
+3.  **Squamous Cell Carcinoma** (Malignant)
 
-### **Activation**:
-    
-    1. Write "jupyter notebook" in the terminal to open jupyter lab
-    2. It will open jupyter lab home directory (Project root directory)
-    3. Make sure data/raw has 3 folders (3 Classes of the dataset, each has 5000 images)
+The system features a decoupled architecture with a **Flask REST API** backend and a modern **React (Vite)** frontend, ensuring fast inference and a user-friendly experience.
 
-### **LastStep**:
+---
 
-    1. Open notebooks folder
-    2. You'll see 2 notebooks files:
-        - phase1_draft.ipynb is the model implementation version without using DATA AUGMENTATION.
-        - phase1_draft_2.ipynb is the model implementation with the DATA AUGMENTATION.
-    3. Open phase1_darft_2.ipynb
-    4. Run each cell (SEQUENTIATLLY)
-    5. Done!
+## Key Features
+* **Deep Learning Engine:** Utilizes Transfer Learning with the VGG16 architecture for high-accuracy image classification.
+* **Real-Time Analysis:** Instant inference using a CPU-optimized backend pipeline.
+* **Interactive UI:** Drag-and-drop interface built with React and Tailwind CSS.
+* **Confidence Breakdown:** Visualizes the model's probability distribution across all classes (Benign vs. Malignant types).
 
-# **===========================**
+---
 
-## **Overview:** This project utilizes a dataset of lung CT scans to classify chest cancer types. The data is organized into three specific classes:
-### 1.  **Adenocarcinoma:** A common form of lung cancer occurring in the mucus-secreting glands of the lung.
-### 2.  **Squamous Cell Carcinoma:** A type of cancer forming in the squamous cells lining the airways.
-### 3.  **Benign:** Non-cancerous lung tissue/nodules.
+## Tech Stack
 
-**Data Source & Purpose:** The dataset consists of .jpg images located in the `../data/raw/` directory. The purpose is to develop a Convolutional Neural Network (CNN) capable of automating the classification process to assist medical diagnostics.
+### Backend (API & Model)
+* **Framework:** Flask (Python)
+* **ML Library:** TensorFlow / Keras
+* **Model:** VGG16 (Pre-trained on ImageNet, Fine-tuned on Lung Histopathology)
+* **Utilities:** NumPy, Pillow (Image Processing)
 
-# **Applications:**
-### **Real-world Use Cases:**
-#### 1. **Early Screening:** Automating the initial analysis of CT scans to flag high-risk patients for radiologists.
-#### 2. **Second Opinion Systems:** Providing a probabilistic verification for doctors to reduce human error/fatigue.
-#### 3. **Remote Diagnostics:** Enabling clinics in remote areas with limited access to specialists to perform initial triage.
+### Frontend (User Interface)
+* **Framework:** React.js (via Vite)
+* **Styling:** Tailwind CSS (Dark Mode UI)
+* **HTTP Client:** Axios
+* **Icons:** React Icons
+
+---
+
+## Must have:
+
+### Node.js & npm
+
+### python 3.10+
+
+## 📂 Project Structure
+
+---
+
+```text
+webapp/
+├── backend/               # Flask API
+│   ├── app/               # Application Factory
+│   ├── api/               # Route Controllers
+│   ├── services/          # Inference Logic
+│   ├── CONFIG.py          # Central Configuration
+│   ├── run.py             # Entry Point
+│   └── lung_cancer_vgg16_model.h5  # Trained Model
+│
+└── frontend/              # React App
+    ├── src/
+    │   ├── api/           # API Integration
+    │   ├── components/    # Reusable UI (DropZone, Results)
+    │   └── assets/        # Static Assets
+    └── public/            # Favicon & Manifest
