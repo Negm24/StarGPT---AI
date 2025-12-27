@@ -1,11 +1,3 @@
-# import os
-
-# # --- 1. SYSTEM CONFIGURATION ---
-# # We force these settings before importing ANY other custom modules
-# # to ensure TensorFlow sees them immediately.
-# os.environ['CUDA_VISIBLE_DEVICES'] = '-1'  # Force CPU
-# os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'  # Reduce warnings
-
 from flask import Flask
 from flask_cors import CORS
 from CONFIG import Config
